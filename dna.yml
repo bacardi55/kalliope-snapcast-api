@@ -1,0 +1,11 @@
+name: "snapcastapi"
+type: "neuron"
+author: "Bacardi55"
+
+kalliope_supported_version:
+            - 0.5
+
+tags:
+        - "snapcast"
+        - "sound"
+        - "media"

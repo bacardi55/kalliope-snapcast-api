@@ -1,0 +1,130 @@
+---
+  - name: "snapcast-set-volume-all"
+    signals:
+      - order: "Volume global de la music à {{volume}}"
+    neurons:
+      - snapcastapi:
+          action: 'volume'
+          mac_addresses: '*'
+          volume: '{{volume}}'
+          host: '{{snapcast_host}}'
+          port: '{{snapcast_port}}'
+
+  - name: "snapcast-set-volume-kitchen"
+    signals:
+      - order: "Volume de la musique à 55 dans la cuisine"
+    neurons:
+      - snapcastapi:
+          action: 'volume'
+          mac_addresses:
+              - '{{snapcast_brook}}'
+          host: '{{snapcast_host}}'
+          port: '{{snapcast_port}}'
+
+  - name: "snapcast-set-volume-kalliope"
+    signals:
+      - order: "Volume de la musique à 55 sur kalliope"
+    neurons:
+      - snapcastapi:
+          action: 'volume'
+          mac_addresses:
+              - '{{snapcast_kalliope}}'
+          host: '{{snapcast_host}}'
+          port: '{{snapcast_port}}'
+
+  - name: "snapcast-set-volume-bedroom"
+    signals:
+      - order: "Volume de la musique à 55 dans la chambre"
+    neurons:
+      - snapcastapi:
+          action: 'volume'
+          mac_addresses:
+              - '{{snapcast_ryosaeba}}'
+          host: '{{snapcast_host}}'
+          port: '{{snapcast_port}}'
+
+  - name: "snapcast-mute-all"
+    signals:
+      - order: "son désactivé partout"
+    neurons:
+      - snapcastapi:
+          action: 'mute'
+          mac_addresses: '*'
+          host: '{{snapcast_host}}'
+          port: '{{snapcast_port}}'
+
+  - name: "snapcast-unmute-all"
+    signals:
+      - order: "son activé partout"
+    neurons:
+      - snapcastapi:
+          action: 'unmute'
+          mac_addresses: '*'
+          host: '{{snapcast_host}}'
+          port: '{{snapcast_port}}'
+
+  - name: "snapcast-mute-kitchen"
+    signals:
+      - order: "Son désactivé dans la cuisine"
+    neurons:
+      - snapcastapi:
+          action: 'mute'
+          mac_addresses: 
+              - '{{snapcast_brook}}'
+          host: '{{snapcast_host}}'
+          port: '{{snapcast_port}}'
+
+  - name: "snapcast-unmute-kitchen"
+    signals:
+      - order: "Son activé dans la cuisine"
+    neurons:
+      - snapcastapi:
+          action: 'unmute'
+          mac_addresses:
+              - '{{snapcast_brook}}'
+          host: '{{snapcast_host}}'
+          port: '{{snapcast_port}}'
+
+  - name: "snapcast-mute-kalliope"
+    signals:
+      - order: "Son désactivé sur kalliope"
+    neurons:
+      - snapcastapi:
+          action: 'mute'
+          mac_addresses: 
+              - '{{snapcast_kalliope}}'
+          host: '{{snapcast_host}}'
+          port: '{{snapcast_port}}'
+
+  - name: "snapcast-unmute-kalliope"
+    signals:
+      - order: "Son activé sur kalliope"
+    neurons:
+      - snapcastapi:
+          action: 'unmute'
+          mac_addresses:
+              - '{{snapcast_kalliope}}'
+          host: '{{snapcast_host}}'
+          port: '{{snapcast_port}}'
+
+  - name: "snapcast-mute-bedroom"
+    signals:
+      - order: "Son désactivé dans la chambre"
+    neurons:
+      - snapcastapi:
+          action: 'mute'
+          mac_addresses: 
+              - '{{snapcast_ryosaeba}}'
+          host: '{{snapcast_host}}'
+          port: '{{snapcast_port}}'
+
+  - name: "snapcast-unmute-bedroom"
+    signals:
+      - order: "Son activé dans la chambre"
+    neurons:
+      - snapcastapi:
+          action: 'unmute'
+          mac_addresses:
+              - '{{snapcast_ryosaeba}}'
+          host: '{{snapcast_host}}'
+          port: '{{snapcast_port}}'

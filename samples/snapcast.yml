@@ -1,0 +1,64 @@
+---
+  - name: "snapcast-set-volume-all"
+    signals:
+      - order: "Volume global de music à {{volume}}"
+    neurons:
+      - snapcastapi:
+          action: 'volume'
+          mac_addresses: '*'
+          volume: '{{volume}}'
+          host: '{{snapcast_host}}'
+          port: '{{snapcast_port}}'
+
+  - name: "snapcast-set-volume-client"
+    signals:
+      - order: "Set music volume at 55 in the kitchen"
+    neurons:
+      - snapcastapi:
+          action: 'volume'
+          mac_addresses:
+              - '{{snapcast_brook}}'
+          host: '{{snapcast_host}}'
+          port: '{{snapcast_port}}'
+
+  - name: "snapcast-mute-all"
+    signals:
+      - order: "Mute music everywhere"
+    neurons:
+      - snapcastapi:
+          action: 'mute'
+          mac_addresses: '*'
+          host: '{{snapcast_host}}'
+          port: '{{snapcast_port}}'
+
+  - name: "snapcast-unmute-all"
+    signals:
+      - order: "Unmute music everywhere"
+    neurons:
+      - snapcastapi:
+          action: 'unmute'
+          mac_addresses: '*'
+          host: '{{snapcast_host}}'
+          port: '{{snapcast_port}}'
+
+  - name: "snapcast-mute-client"
+    signals:
+      - order: "Mute the music in the kitchen"
+    neurons:
+      - snapcastapi:
+          action: 'mute'
+          mac_addresses: 
+              - '{{snapcast_brook}}'
+          host: '{{snapcast_host}}'
+          port: '{{snapcast_port}}'
+
+  - name: "snapcast-unmute-client"
+    signals:
+      - order: "unmute the music in the kitchen"
+    neurons:
+      - snapcastapi:
+          action: 'unmute'
+          mac_addresses:
+              - '{{snapcast_brook}}'
+          host: '{{snapcast_host}}'
+          port: '{{snapcast_port}}'
