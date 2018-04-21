@@ -4,6 +4,10 @@
 
 Allow [Kalliope](https://kalliope-project.github.io/) to interact with [Snapcast](https://github.com/badaix/snapcast) [API](https://github.com/badaix/snapcast/blob/master/doc/json_rpc_api/v2_0_0.md#clientsetvolume).
 
+This neuron doesn't coverage the whole API of snapcast. It only manage client volume and mute/unmute system so far.
+I'm happy to add more coverage if people need it or accept pull requests :).
+
+I plan to add a second stream on snapcast at some point so i will update it some day^^.
 
 ## Installation
 ```bash
